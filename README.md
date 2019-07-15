@@ -1,2 +1,2 @@
-# CodecemdyProjects
-A Space for Me to Store Codecemdy Projects
+# CodecademyProjects
+A Space for me to Store Codecademy Projects
