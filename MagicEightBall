@@ -1,4 +1,6 @@
-//Collects the user's name and greets them
+<script type="text/javascript">
+
+//Creates a variable to store user's name and greets them
 let userName = '';
 userName ? console.log(`Hello ${userName}!`): console.log('Hello!');
 
@@ -52,3 +54,4 @@ if (randomNumber === 0) {
 
 //Reports answer to user
 console.log(`${eightBall}`);
+</script>
