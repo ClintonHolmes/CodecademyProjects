@@ -1,3 +1,5 @@
+//I'm assuming in later lessons I can collect user information. 
+
 //Selects a random number between 0-999
 let raceNumber = Math.floor(Math.random() * 1000);
 //Variables to hold runner age and registration status
