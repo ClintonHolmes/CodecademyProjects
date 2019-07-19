@@ -12,3 +12,5 @@ const totalCost = costOfMonitors (5,4);
 
 //Prints the total cost
 console.log(`Dude, that's going to be like $${totalCost}!`);
+
+//End
