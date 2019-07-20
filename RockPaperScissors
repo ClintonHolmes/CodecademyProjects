@@ -1,0 +1,97 @@
+/* 
+GETTING STARTED WITH JAVASCRIPT
+Rock, Paper, or Scissors
+Rock paper scissors is a classic two player game. Each player chooses either rock, paper, or scissors. The items are compared, and whichever player chooses the more powerful item wins.
+
+The possible outcomes are:
+
+Rock destroys scissors.
+Scissors cut paper.
+Paper covers rock.
+If there’s a tie, then the game ends in a draw.
+
+Our code will break the game into four parts:
+
+1. Get the user’s choice.
+2. Get the computer’s choice.
+3. Compare the two choices and determine a winner.
+4. Start the program and display the results.
+
+If you get stuck during this project or would like to see an experienced developer work through it, click “Get Help“ to see a project walkthrough video.
+*/
+
+
+//PART 1: GET USER'S CHOICE
+
+//Functional expression in arrow syntax to get userInput.
+const getUserChoice = userInput => {
+  //Converts to lowercase incase user enters different capitalizations.
+  userInput = userInput.toLowerCase();
+  //Checks is user input a valid choice, displays error message if not
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors'){
+    return userInput;
+  } else {
+    console.log('That\'s not an option. Did you spell Scissors right?')
+  }
+};
+
+//PART 2: GET COMPUTER'S CHOICE
+
+//Functional expression in arrow syntax to get computer's choice
+const getComputerChoice = () => {
+  //Random number generator to create whole number between 0-2.
+  let randNum = Math.floor(Math.random()*3);
+  //Returns computer's choice depending on randNum. Assigns 0 = rock, 1 = paper, 2 = scissors
+  switch (randNum) {
+    case 0:
+      return 'rock';
+      break;
+    case 1:
+      return 'paper';
+      break;
+    case 2:
+      return 'scissors';
+      break;
+  }
+};
+
+//PART 3: DETERMINE WINNER
+
+//Functional expression in arrow syntax to determine the winner
+const determineWinner = (userChoice, computerChoice) => {
+  //Checks a tie condition first, else we determine the winner
+  if (userChoice === computerChoice) {
+    return 'The game was a tie.';
+  } else {
+    //Returns winner if userChoice = rock
+     if (userChoice === 'rock') {
+       if (computerChoice === 'paper') {
+         return 'The computer\'s paper smoothers your rock. Better luck next time.';
+       } 
+       else {
+         return 'Nice throw! The computer\'s scissors are smashed to oblivion by your rock.';
+       }
+     }  
+	  //Returns winner if userChoice = paper
+    if (userChoice === 'paper') {
+       if (computerChoice === 'scissors') {
+         return 'The computer\'s scissors cut your paper to shreds. Better luck next time.';
+       } 
+       else {
+         return 'Nice throw! Your paper just smoothered the computer\'s rock.';
+       }
+  }
+    //Returns winner if userChoice = scissors
+    if (userChoice === 'scissors') {
+       if (computerChoice === 'rock') {
+         return 'The computer\'s rock crushes your scissors. Better luck next time.';
+       } 
+       else {
+         return 'Nice throw! Your scissors just cut the computer\'s paper downt to size.';
+      }
+    }
+  }
+};
+
+//APPENDIX: TESTING FUNCTIONS
+console.log(determineWinner(getUserChoice('Rock'),getComputerChoice()));
