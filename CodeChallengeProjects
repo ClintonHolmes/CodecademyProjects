@@ -1,0 +1,129 @@
+//CHALLENGE 1: 
+
+//The most common minimum age to vote is 18. Write a function canIVote() that takes in a number, representing the person’s age, and returns the boolean true if they are 18 years old or older, and the boolean false if they are not.
+
+// Write your function here:
+const canIVote = age => age >= 18;
+
+
+// Uncomment the line below when you're ready to try out your function
+console.log(canIVote(21)) // Should print true
+
+// We encourage you to add more function calls of your own to test your code!
+
+//CHALLENGE 2:
+
+//Write a function, agreeOrDisagree(), that takes in two strings, and returns ‘You agree!’ if the two strings are the same and ‘You disagree!’ if the two strings are different.
+
+// Write your function here:
+const agreeOrDisagree = (statement1, statement2) => {
+  if (statement1 === statement2) {
+    return 'You agree!'
+  } else {
+    return 'You disagree!'
+  }
+};
+
+// Uncomment the line below when you're ready to try out your function
+console.log(agreeOrDisagree("yep", "yep")) 
+// Should print 'You agree!'
+
+// We encourage you to add more function call of your own to test your code!
+console.log(agreeOrDisagree("yep", "nope")) 
+
+//CHALLENGE 3:
+
+/* Write a function, lifePhase(), that takes in a person’s age, as a number, and returns which phase of life they are in.
+
+Here are the classifications:
+0-3 should return ‘baby’
+4-12 should return ‘child’
+13-19 should return ‘teen’
+20-64 should return ‘adult’ 
+65-140 should return ‘senior citizen’
+If the number is less than 0 or greater than 140, the program should return ‘This is not a valid age’
+*/
+
+// Write your function here:
+const lifePhase = age => {
+  if (age <= 3 && age >= 0) {
+    return 'baby';
+  } else if (age >= 4 && age <= 12) {
+    return 'child';
+  } else if (age >= 13 && age <= 19) {
+    return 'teen';
+  } else if (age >= 20 && age <= 64) {
+    return 'adult';
+  } else if (age >= 65 && age <=140) {
+    return 'senior citizen';
+  } else {
+    return 'This is not a valid age'
+  }
+};
+
+
+// Uncomment the line below when you're ready to try out your function
+console.log(lifePhase(5)) //should print 'child'
+
+// We encourage you to add more function calls of your own to test your code!
+console.log(lifePhase(-1)) //should print 'This is not a valid age'
+console.log(lifePhase(13)) //should print 'Teen'
+
+/* Alternative using boolean and switch case
+
+switch (true) {
+ case age < 0: age = 141 //Moves to default condition
+ case age < 4: return 'baby';
+ case age < 13: return 'child';
+ ...
+ case age < 140: return 'senior';
+ default: return 'This is not a valid age';
+}
+*/
+
+//CHALLENGE 4:
+
+/* Write a function, finalGrade(). It should:
+
+take three arguments of type number
+find the average of those three numbers
+return the letter grade (as a string) that the average corresponds to
+return ‘You have entered an invalid grade.’ if any of the three grades are less than 0 or greater than 100
+0-59 should return: ‘F’
+60-69 should return: ‘D’
+70-79 should return: ‘C’
+80-89 should return: ‘B’
+90-100 should return: ‘A’
+*/
+
+// Write your function here:
+const finalGrade = (num1, num2, num3) => {
+  //Control flow for checking grades are a valid score  
+  if ((num1 < 0 || num1 > 100) || (num2 < 0 || num2 > 100) || (num3 < 0 || num3 > 100)) {
+    return 'You have entered an invalid grade.'
+  } 
+  
+  //Control flow for returning letter grade
+  let average = (num1 + num2 + num3) / 3;
+  if (average >= 0 && average <= 59) {
+    return 'F';
+  } else if (average <= 69) {
+    return 'D';
+  } else if (average <= 79) {
+    return 'C';
+  } else if (average <= 89) {
+    return 'B';
+  } else if (average <= 100) {
+    return 'A';
+  }
+};
+
+// Uncomment the line below when you're ready to try out your function
+console.log(finalGrade(95, 92, 95)) // Should print 'A'
+
+// We encourage you to add more function calls of your own to test your code!
+console.log(finalGrade(10, 10, 15)) // Should print 'F'
+console.log(finalGrade(0, 0, 0)) // Should print 'F'
+console.log(finalGrade(0, -10, 0)) // Should print 'Invalid'
+
+//CHALLENGE 5:
