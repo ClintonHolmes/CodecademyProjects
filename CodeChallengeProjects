@@ -291,3 +291,133 @@ const howOld = (age, year) => {
 console.log(howOld(31,1968)); //Should say 20 years before born
 console.log(howOld(31,2022)); //Should say you will be 33
 console.log(howOld(31,1988)); //Should say 0 -> should change to if 0, then say that's the year you were born!
+
+//CHALLENGE 12
+
+/*
+Given the percentage of DNA shared between two people, you can calculate their likely familial relationship.
+
+We wrote a function, whatRelation(), that has one number parameter, percentSharedDNA, and returns the likely relationship. We expect the number passed in to always be an integer from 0 to 100, but for some reason it’s not working!
+
+Here’s how it’s supposed to calculate the relationship:
+100 should return ‘You are likely identical twins.’
+35-99 should return ‘You are likely parent and child or full siblings.’
+14-34 should return ‘You are likely grandparent and grandchild, aunt/uncle and neice/nephew, or half siblings.’
+6-13 should return ‘You are likely 1st cousins.’
+3-5 should return ‘You are likely 2nd cousins.’
+1-2 should return ‘You are likely 3rd cousins.’
+0 should return ‘You are likely not related.’
+
+Unfortunately, it’s not working how we want!
+
+whatRelation(34) 
+// Should return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+// But instead it's returning 'You are likely 1st cousins.'
+
+whatRelation(3)
+// Should return 'You are likely 2nd cousins.'
+// But instead it's returning 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+Can you fix our code, please?
+*/
+
+//My corrected code:
+
+const whatRelation = percentSharedDNA => {
+    if (percentSharedDNA === 100) {
+        return 'You are likely identical twins.'
+    }
+    if (percentSharedDNA > 34) {
+        return 'You are likely parent and child or full siblings.'
+    }
+    //Condition needed to be changed from ".." < 13 to ".." > 13
+    if (percentSharedDNA > 13) {
+        return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+    }
+    if (percentSharedDNA > 5) {
+        return 'You are likely 1st cousins.'
+    }
+    if (percentSharedDNA > 2) {
+        return 'You are likely 2nd cousins.'
+    }
+    if (npercentSharedDNA > 0) {
+        return 'You are likely 3rd cousins'
+    }
+    return 'You are likely not related.'
+}
+
+console.log(whatRelation(34))
+
+console.log(whatRelation(3))
+
+//CHALLENGE 13
+
+/*
+Create a function, tipCalculator(), that has two parameters, a string representing the quality of the service received and a number representing the total cost.
+
+Return the tip, as a number, based on the following:
+‘bad’ should return a 5% tip
+‘ok’ should return a 15% tip
+‘good’ should return a 20% tip 
+‘excellent’ should return a 30% tip
+all other inputs should default to 18%
+
+tipCalculator('good', 100) // Should return 20
+*/
+
+// Write your function here:
+const tipCalculator = (quality, total) => {
+  //converts user input to lowercase for control low below
+  quality = quality.toLowerCase();
+  //Flow control for determining tip percentage based on quality; there should be validation logic prior to the switch case to check the quality paramater is 'bad', 'ok', and alert the user. Else there should be a condition notifying the user that it went to the default. 
+  switch (true) {
+    case quality === 'bad': return total * 0.05;
+    case quality === 'ok': return total * 0.15;
+    case quality === 'good': return total * 0.20;
+    case quality === 'excellent': return total * 0.30;
+    default: return total * 0.18;
+  }
+}
+
+// Uncomment the line below when you're ready to try out your function
+console.log(tipCalculator('good', 100)) //should return 20
+
+// We encourage you to add more function calls of your own to test your code!
+
+//CHALLENGE 14
+
+/*
+Write a function, toEmoticon(), that takes in a string and returns the corresponding emoticon as a string. Use a switch/case, and cover these cases:
+
+'shrug' should return '|_{"}_|'
+'smiley face' should return ':)'
+'frowny face' should return':('
+'winky face' should return ';)'
+'heart' should return '<3'
+any other input should return '|_(* ~ *)_|'
+*/
+
+// Write your function here:
+const toEmoticon = (type) => {
+  //converts type to lowercase for control flow below
+  type = type.toLowerCase();
+  
+  //Determines which emoticon to return based on type parameter
+  switch(true) {
+      case type === 'shrug': return '|_{"}_|';
+    case type === 'smiley face': return ':)';
+    case type === 'frowny face': return ':(';
+      case type === 'winky face': return ';)';
+      case type === 'heart': return '<3';
+    default: return '|_(* ~ *)_|';
+  }
+}
+
+
+// Uncomment the line below when you're ready to try out your function
+console.log(toEmoticon("whatever")) 
+// Should print  '|_(* ~ *)_|'
+
+// We encourage you to add more function calls of your own to test your code!
+console.log(toEmoticon("ShRug")) //Should print |_{"}_|
+console.log(toEmoticon("SMILEY FACE")) //should print :)
+console.log(toEmoticon("SMILEYFACE")) //should print '|_(* ~ *)_|', could add a flow control to check it's a valid condition 
