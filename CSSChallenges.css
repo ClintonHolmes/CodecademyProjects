@@ -1,0 +1,382 @@
+/* 
+CHALLENGE 1
+Missing Semicolons
+Semicolons separate the declarations in a ruleset.
+*/
+
+h3 {
+  text-align: center;
+}
+
+.tips {
+  border-radius: 5px;
+  border: 3px solid black;
+  padding: 5%;
+  width: 80%;
+  margin: 5% auto;
+  text-align: justify;
+}
+
+#one {
+  background-color: rgb(239, 217, 202);
+  font-family: "Palatino";
+	font-size: 18px;
+}
+
+#two {
+  background-color: rgb(253, 77, 63);
+  font-family: "Verdana";
+  font-style: italic;
+  line-height: 20px;
+}
+
+#three {
+  background-color: rgb(109, 240, 194);
+  font-family: "Courier";
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#four {
+  background-color: rgb(255, 199, 64);
+  font-family: "Arial";
+  font-variant: small-caps;
+	text-decoration: underline;
+}
+
+/*
+CHALLENGE 2
+Fallback Font
+Add a fallback font in case the first font doesn’t load.
+*/
+
+body {
+  font-family: Roboto, "Courier";
+}
+
+/* 
+CHALLENGE 3
+Round Image
+Embrace web trends by changing a square image to a circular one.
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFF;
+  padding: 50px 60px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: #004E89;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+h2 {
+  color: #AAA;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p {
+  color: #333;
+  font-size: 16px;
+  font-weight: 100;
+  text-align: center;
+}
+
+img {
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+/* 
+CHALLENGE 4
+Combinator
+Use a CSS combinator to make a ruleset more specific.
+
+In the browser, the elements that have a class attribute of .recipe are bolded. In style.css, change the .recipe ruleset to only select the .recipe element nested within the <article> element.
+*/
+
+body {
+  background-color: #F0EAD6;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-variant: small-caps;
+  font-size: 24px;
+  text-align: center;
+  font-weight: normal;
+}
+
+article .recipe {
+  font-weight: bold;
+}
+
+/*
+CHALLENGE 5
+Inline HTML to CSS
+Take inline CSS and turn it into a proper stylesheet.
+
+1. Remove all of the inline CSS inside index.html and replace it by writing the correct CSS selectors and rules inside style.css.
+
+2. To make the styles re-appear, link the stylesheet inside the <head> element in the index.html file.
+*/
+
+/* HTML with styles to be converted to CSS */ 
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Log In Page</title>
+  <!-- Link added once CSS sheet is created -->
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+  
+<body>
+  <form style="text-align: center; width: 90%; margin: 0 auto;">
+    <input type="text" placeholder="Enter your name" required style="font-weight: 300; width: 100%; font-size: 25px; border: 0px; color: #4b545f; font-family: Helvetica Neue, Helvetica, Sans-serif; margin: 5%;">
+    <input type="text" placeholder="Enter your email" required style="font-weight: 300; width: 100%; font-size: 25px; border: 0px; color: #4b545f; font-family: Helvetica Neue, Helvetica, Sans-serif; margin: 5%;">
+    <button style="border: 2px solid #ddd; padding: 3%; margin: 5%; width: 50%;">Sign In</button>
+  </form>
+</body>
+  
+</html>
+
+/* Converted to CSS */ 
+
+form {
+  text-align: center; 
+  width: 90%; 
+  margin: 0 auto;>
+}
+
+input {
+  font-family: Helvetica Neue, Helvetica, Sans-serif; 
+  font-size: 25px; 
+  font-weight: 300; 
+  color: #4b545f;
+  width: 100%; 
+  border: 0px; 
+  margin: 5%;
+}
+
+button {
+  border: 2px solid #ddd;
+  padding: 3%; 
+  margin: 5%; 
+  width: 50%;
+}
+
+/* 
+CHALLENGE 6
+Position
+Positioning an element is an important part of shaping the layout of a web page.
+
+You have two <div> elements adjacent to each other at the moment. Change the positioning of these <div>s to see what color is created when the <div>s overlap.
+*/
+
+.circle {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  opacity: 0.5;
+}
+
+#red {
+  background-color: rgb(255, 0, 0);
+  position: absolute;
+}
+
+#blue {
+  background-color: rgb(0, 0, 255);
+  position: absolute;
+}
+
+/*
+CHALLENGE 7
+Display
+Change the display of an element to render like the image below: 
+A red box to the left of a blue box. Both boxes are enclosed in a black box. 
+*/
+
+body {
+  background-color: rgb(239, 217, 202);
+}
+
+#box {
+  border: 10px solid black;
+  width: 200px;
+  height: 200px;
+  margin: 25% auto;
+}
+
+#left {
+  border: 5px solid red;
+  width: 90px;
+  height: 190px;
+  display: inline-block;
+}
+
+#right {
+  border: 5px solid blue;
+  width: 90px;
+  height: 190px;
+  float: right;
+}
+
+/* 
+CHALLENGE 8
+Clean Up a Stylesheet
+Clean up the unused CSS selectors, selectors that are not being applied to any element, in index.html.
+
+Remove the 3 unused selectors and their styles inside style.css by checking to see the styles applied to the elements inside index.html.
+*/
+
+body {
+  background-color: #FFF;
+  padding: 50px 60px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: #004E89;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+h2 {
+  color: #AAA;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+p {
+  color: #333;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+#gameboard {
+  position: relative;
+  top: 30px;
+}
+
+.card {
+  border: 2px solid #9DD1F1;
+  display: inline-block;
+  height: 200px;
+  margin-top: 4px;
+  padding: 30px auto;
+  width: 215px;
+}
+
+.card img {
+  padding-top: 40px;
+}
+
+/* 
+CHALLENGE 9
+Specificity
+Read more about CSS specificity in the MDN CSS Specificity documentation.
+
+1. Add a ruleset in style.css to make the opacity of the paragraph, containing the text, “What will it be?”, equal to 0.5 — the only element that should change is the second <p>.
+
+Think about the specificity of CSS rules when it pertains to tags, classes, ids, and parent elements.
+
+2. In style.css, change the color of the <h1> to #12130F.
+*/
+
+/* 
+Calculating Specificity 
+https://discuss.codecademy.com/t/how-can-i-calculate-specificity/363597
+*/
+
+section {
+  font-family: "Helvetica Neue", Helvetica, Sans-serif;
+  background-color: #5B9279;
+  padding: 5em 3em;
+ 	color: #EAE6E5;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #12130F;
+}
+
+p {
+  font-size: 25px;
+}
+
+#question {
+  opacity: 0.5;
+}
+
+/* 
+CHALLENGE 10
+Padding vs. Margin
+A padding vs. margin challenge! Take the initial teal and purple boxes that have a height and width of 100px and manipulate the padding and margin properties to get the image below:
+
+Changing only the padding and margin properties of #teal and #purple, make the boxes in the browser match the dimensions of the boxes in the image above.
+
+Remember the initial boxes have dimensions of 100px height and width.
+*/
+
+.block {
+  height: 100px;
+  width: 100px;
+  display: block;
+}
+
+#container{
+  background-color: #F4E8C1;
+ 	position: absolute;
+  width: 100%;
+}
+
+#teal {
+  background-color: #A8D0DB;
+  padding: 0px 50px;
+  margin: 100px 100px;
+}
+
+#purple {
+  background-color: #414073;
+  padding: 50px 50px;
+  margin: 0px 0px 50px 100px;
+}
+
+/* 
+REVIEW 
+
+CSS Code Challenges Review
+Great job on completing the CSS code challenges!
+
+To recap on what you just practiced:
+
+Edited an image to make it round.
+Targeted specific elements’ CSS.
+Transferred inline CSS to a stylesheet.
+Refactored a CSS stylesheet to remove extra selectors.
+Manipulated padding and margin to align elements.
+Added a fallback font just in case a font can’t be displayed.
+Separated declarations using semicolons.
+Changed the display property of an element.
+Assigned the position of elements to overlap.
+*/
