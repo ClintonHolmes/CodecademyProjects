@@ -1,0 +1,157 @@
+/*
+MEDIA QUERIES
+Review: Media Queries
+Incredible work! You learned how to change the way a website appears on different screens with media queries and breakpoints
+
+Throughout this lesson, you learned:
+
+When a website responds to the size of the screen it’s viewed on, it’s called a responsive website.
+You can write media queries to help with different screen sizes.
+Media queries require media features. Media features are the conditions that must be met to render the CSS within a media query.
+Media features can detect many aspects of a user’s browser, including the screen’s width, height, resolution, orientation, and more.
+The and operator requires multiple media features to be true at once.
+A comma separated list of media features only requires one media feature to be true for the code within to be applied.
+The best practice for identifying where media queries should be set is by resizing the browser to determine where the content naturally breaks. Natural breakpoints are found by resizing the browser.
+With your knowledge of media queries and CSS, you can make websites that look great on any device, from a small phone to a huge television. By making your websites responsive, you’ll make it possible for any of your users to have a great experience.
+
+Breakpoints diagram: https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/screen-sizes.png
+*/
+
+html,
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background-color: white;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.main {
+  height: 30rem;
+  padding-top: 1rem;
+  background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tsunami-coffee/images/bg-photo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main img {
+  width: 15rem;
+  display: block;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+nav {
+  background-color: OrangeRed;
+  color: White;
+  padding: 0.75rem 1.25rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+}
+
+.supporting,
+.rating,
+.gallery,
+.location {
+  margin: 4em auto;
+}
+
+.supporting {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+
+.supporting img {
+	height: 10%;
+  width: 10%;
+  margin-right: 5%;
+}
+
+.rating {
+  background-color: OrangeRed;
+  height: 20rem;
+  padding: 0 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating h1 {
+	font-size: 2.5rem;
+}
+
+.gallery img {
+  display: block;
+  width: 30%;
+  margin: 1.5%;
+  float: left;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.location {
+  text-align: center;
+  margin-bottom: 7rem;
+}
+
+.location img {
+	width: 100%;
+}
+
+footer {
+  background-color: OrangeRed;
+  padding: 0 1rem;
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5em 0;
+  color: white;
+}
+
+@media only screen and (max-width: 960px) {
+  .main {
+    padding-top: 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .supporting img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .gallery img {
+  display: block;
+  width: 100%;
+  margin: 0;
+  float: left;
+  }
+  
+  nav {
+    display: none;
+  }
+}
